@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withSiteData } from 'react-static';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 //
 import avatarImg from '../../assets/img/avatar.jpg';
-import Footer from './Footer';
-import Header from './Header';
+import SiteNav from '../../components/SiteNav';
+import SiteFooter from '../../components/SiteFooter';
 
 const styles = theme => ({
   heroTitle: {
@@ -43,12 +42,8 @@ const Hero = props => {
       <Typography variant="display2" className={classes.heroTitle}>
         Daniel Lennox
       </Typography>
-      <div className={classNames(classes.row, 'row', 'justify-content-center')}>
-        <Header />
-      </div>
-      <div className={classNames(classes.row, 'row', 'justify-content-center')}>
-        <Footer />
-      </div>
+      <SiteNav home />
+      <SiteFooter />
     </div>
   );
 };

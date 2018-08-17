@@ -1,12 +1,12 @@
 import React from 'react';
 import HttpError from '../components/HttpError';
-import ParticlesBg from '../components/ParticlesBg';
+import SiteBackground from '../components/SiteBackground';
 
 const Error404 = () => {
   return (
-    <ParticlesBg>
+    <SiteBackground>
       <HttpError code={404} />
-    </ParticlesBg>
+    </SiteBackground>
   );
 };
 

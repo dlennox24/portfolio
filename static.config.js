@@ -12,7 +12,7 @@ import theme from './src/config/muiTheme';
 
 const CustomHtml = props => {
   const { Html, Head, Body, children, renderMeta } = props;
-
+  console.log(props);
   return (
     <Html>
       <Head>
@@ -44,6 +44,10 @@ export default {
       {
         path: '/about',
         component: 'src/containers/About',
+      },
+      {
+        path: '/resume',
+        component: 'src/containers/Resume',
       },
       {
         path: '/blog',

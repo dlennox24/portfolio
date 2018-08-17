@@ -26,7 +26,7 @@ const styles = () => ({
     top: 0,
     left: 0,
     backgroundColor: '#1b1b1b',
-    backgroundImage: `url("${codeBgImg}")`,
+    backgroundImage: `url(${codeBgImg})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     minHeight: '100vh',
@@ -43,23 +43,26 @@ const styles = () => ({
   },
 });
 
-const Home = props => {
-  const { classes, children } = props;
+const SiteBackground = props => {
+  const { classes, children, particlesjs } = props;
   return (
     <React.Fragment>
       <div className={classes.root}>
         <div className={classes.bgColor} />
         <div className={classes.codeBg} />
-        <Particles params={particlesJsConfig} canvasClassName={classes.particles} />
+        {particlesjs && (
+          <Particles params={particlesJsConfig} canvasClassName={classes.particles} />
+        )}
       </div>
       <div className={classes.children}>{children}</div>
     </React.Fragment>
   );
 };
 
-Home.propTypes = {
+SiteBackground.propTypes = {
   children: PropTypes.any,
   classes: PropTypes.object.isRequired,
+  particlesjs: PropTypes.bool,
 };
 
-export default withSiteData(withStyles(styles)(Home));
+export default withSiteData(withStyles(styles)(SiteBackground));

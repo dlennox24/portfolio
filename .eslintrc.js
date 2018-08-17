@@ -13,7 +13,7 @@ module.exports = {
     jest: true,
   },
   extends: ['plugin:import/recommended', 'airbnb'],
-  parser: 'babel-eslint',
+  // parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 7,
     sourceType: 'module',

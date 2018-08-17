@@ -9,7 +9,7 @@ import { withStyles } from '@material-ui/core/styles';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 
 // Custom styles
-const styles = {
+const styles = () => ({
   '@global': {
     img: {
       maxWidth: '100%',
@@ -24,7 +24,7 @@ const styles = {
   container: {
     minHeight: '100%',
   },
-};
+});
 
 class App extends PureComponent {
   // Remove the server-side injected CSS.

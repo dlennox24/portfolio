@@ -1,4 +1,4 @@
-import theme from './muiTheme'
+import theme from './muiTheme';
 
 export default {
   particles: {
@@ -109,4 +109,4 @@ export default {
     },
   },
   retina_detect: true,
-}
+};

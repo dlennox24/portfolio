@@ -50,14 +50,29 @@ const styles = theme => ({
   root: {
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
+    textAlign: 'center',
   },
 });
 
-const HomeHeader = props => {
-  const { classes, className } = props;
+const SiteNav = props => {
+  const { classes, className, home } = props;
+  const colCell = home ? 'col-md-4' : 'col-md-3';
   return (
     <div className={classNames(classes.root, 'row', 'justify-content-center', className)}>
-      <div className={classNames(classes.linkContainer, 'col-md-4')}>
+      {!home && (
+        <div className={classNames(classes.linkContainer, colCell)}>
+          <Typography
+            variant="button"
+            component={Link}
+            to="/"
+            className={classNames(classes.button, classes.link)}
+            color="inherit"
+          >
+            <span>Home</span>
+          </Typography>
+        </div>
+      )}
+      <div className={classNames(classes.linkContainer, colCell)}>
         <Typography
           variant="button"
           component={Link}
@@ -68,7 +83,7 @@ const HomeHeader = props => {
           <span>Projects</span>
         </Typography>
       </div>
-      <div className={classNames(classes.linkContainer, 'col-md-4')}>
+      <div className={classNames(classes.linkContainer, colCell)}>
         <Typography
           variant="button"
           component={Link}
@@ -79,7 +94,7 @@ const HomeHeader = props => {
           <span>About</span>
         </Typography>
       </div>
-      <div className={classNames(classes.linkContainer, 'col-md-4')}>
+      <div className={classNames(classes.linkContainer, colCell)}>
         <Typography
           variant="button"
           component={Link}
@@ -94,9 +109,10 @@ const HomeHeader = props => {
   );
 };
 
-HomeHeader.propTypes = {
+SiteNav.propTypes = {
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,
+  home: PropTypes.bool,
 };
 
-export default withSiteData(withStyles(styles)(HomeHeader));
+export default withSiteData(withStyles(styles)(SiteNav));

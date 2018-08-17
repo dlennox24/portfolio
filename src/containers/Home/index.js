@@ -1,14 +1,14 @@
 import React from 'react';
 import { withSiteData } from 'react-static';
-import ParticlesBg from '../../components/ParticlesBg';
+import SiteBackground from '../../components/SiteBackground';
 import Hero from './Hero';
 
 const Home = () => {
   return (
     <React.Fragment>
-      <ParticlesBg>
+      <SiteBackground particlesjs>
         <Hero />
-      </ParticlesBg>
+      </SiteBackground>
     </React.Fragment>
   );
 };

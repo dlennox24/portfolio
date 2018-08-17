@@ -2,8 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import Icon from '@material-ui/core/Icon';
+import IconButton from '@material-ui/core/IconButton';
+import Particles from 'react-particles-js';
 import SiteBackground from '../components/SiteBackground';
 import SiteNav from '../components/SiteNav';
+import particlesJsConfig from '../config/particlesjs';
 
 const styles = theme => ({
   root: {
@@ -31,12 +38,18 @@ const About = props => {
     <SiteBackground>
       <SiteNav className={classes.siteNav} />
       <div className={classes.root}>
-        <Typography type="headline" gutterBottom>
-          {"This is what we're all about."}
-        </Typography>
-        <Typography type="body1">
-          {"React, static sites, performance, speed. It's the stuff that makes us tick."}
-        </Typography>
+        <AppBar position="static">
+          <Toolbar>
+            <Particles params={particlesJsConfig} canvasClassName={classes.particles} />
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <Icon>menu</Icon>
+            </IconButton>
+            <Typography variant="title" color="inherit" className={classes.flex}>
+              Title
+            </Typography>
+            <Button color="inherit">Login</Button>
+          </Toolbar>
+        </AppBar>
       </div>
     </SiteBackground>
   );

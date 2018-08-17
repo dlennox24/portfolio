@@ -20,4 +20,4 @@ export default {
       info: '#17a2b8',
     },
   },
-}
+};

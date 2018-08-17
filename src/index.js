@@ -14,14 +14,15 @@ if (typeof document !== 'undefined') {
   const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
   const muiTheme = createMuiTheme(theme);
 
-  const render = Comp => {
-    renderMethod(
-      <MuiThemeProvider theme={muiTheme}>
-        <Comp />
-      </MuiThemeProvider>,
-      document.getElementById('root'),
-    );
-  };
+  const component = Comp => (
+    <MuiThemeProvider theme={muiTheme}>
+      <Comp />
+    </MuiThemeProvider>
+  );
+
+  const docRoot = document.getElementById('root');
+
+  const render = Comp => renderMethod(component(Comp), docRoot);
 
   // Render!
   render(App);
